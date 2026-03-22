@@ -1,0 +1,1564 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribal Zone Trading 370 | Civil Engineering</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background - FIXED IMAGES */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-slideshow {
+            position: absolute;
+            width: 500%;
+            height: 100%;
+            animation: slideBackground 100s linear infinite;
+            display: flex;
+        }
+
+        .bg-slide {
+            width: 20%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.3);
+        }
+
+        @keyframes slideBackground {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-80%); }
+        }
+
+        /* Moving Construction Photos - FIXED IMAGES WITH WORKING LINKS */
+        .moving-construction {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 3px solid #ff6b00;
+            box-shadow: 0 0 30px rgba(255,107,0,0.3);
+        }
+
+        .moving-grid {
+            display: flex;
+            animation: moveImages 60s linear infinite;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .moving-grid:hover {
+            animation-play-state: paused;
+        }
+
+        .moving-item {
+            min-width: 400px;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 3px solid #00ccff;
+            box-shadow: 0 0 25px rgba(0,204,255,0.5);
+        }
+
+        .moving-item:hover {
+            transform: scale(1.08);
+            border-color: #ff6b00;
+            box-shadow: 0 0 40px rgba(255,107,0,0.8);
+        }
+
+        @keyframes moveImages {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Floating Icons */
+        .floating-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .float-icon {
+            position: absolute;
+            color: rgba(255, 107, 0, 0.15);
+            font-size: 4rem;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+            50% { transform: translateY(-30px) rotate(15deg); opacity: 0.3; }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+        }
+
+        /* Navigation Bar - NEW COLORS */
+        .navbar {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #ff6b00;
+            box-shadow: 0 5px 20px rgba(255,107,0,0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b00;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-shadow: 0 0 15px rgba(255,107,0,0.5);
+        }
+
+        .logo span {
+            color: #00ccff;
+            font-size: 0.9rem;
+            display: block;
+            text-shadow: 0 0 10px rgba(0,204,255,0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: rgba(255,107,0,0.1);
+        }
+
+        .nav-links a:hover {
+            background: #ff6b00;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,0,0.5);
+        }
+
+        .nav-links a.active {
+            background: #00ccff;
+            color: #000;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .nav-btn-outline {
+            background: transparent;
+            border: 2px solid #ff6b00;
+            color: #ff6b00;
+        }
+
+        .nav-btn-outline:hover {
+            background: #ff6b00;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff6b00;
+        }
+
+        .nav-btn-solid {
+            background: #00ccff;
+            color: #000;
+            border: 2px solid #00ccff;
+        }
+
+        .nav-btn-solid:hover {
+            background: transparent;
+            color: #00ccff;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #00ccff;
+        }
+
+        /* Breadcrumb - NEW COLORS */
+        .breadcrumb {
+            padding: 1.5rem 4rem;
+            color: #fff;
+            font-size: 0.9rem;
+            background: linear-gradient(90deg, #1a1a1a, #2d2d2d);
+            border-bottom: 2px solid #00ccff;
+        }
+
+        .breadcrumb a {
+            color: #ff6b00;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .breadcrumb a:hover {
+            color: #00ccff;
+        }
+
+        /* Hero Section - NEW COLORS */
+        .hero {
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 3rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(255,107,0,0.2), rgba(0,204,255,0.2));
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 2px solid #ff6b00;
+            animation: glowPulse 3s infinite;
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 30px rgba(255,107,0,0.3); }
+            50% { box-shadow: 0 0 60px rgba(0,204,255,0.6); }
+            100% { box-shadow: 0 0 30px rgba(255,107,0,0.3); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b00, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        /* Main Content Container */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid #ff6b00;
+        }
+
+        /* Info Cards - NEW COLORS */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .info-card {
+            background: linear-gradient(145deg, #ff6b00, #ff8533);
+            padding: 2rem;
+            border-radius: 20px;
+            border-right: 5px solid #00ccff;
+            box-shadow: 0 10px 30px rgba(255,107,0,0.3);
+            color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card:nth-child(2) {
+            background: linear-gradient(145deg, #00ccff, #33d6ff);
+            border-right: 5px solid #ff6b00;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 6s infinite;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #000;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-label {
+            font-weight: 700;
+            min-width: 180px;
+            color: #000;
+        }
+
+        .info-value {
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* Office Cards - NEW COLORS */
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .office-card {
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid #00ccff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,204,255,0.2);
+        }
+
+        .office-card:nth-child(2) {
+            border: 2px solid #ff6b00;
+            box-shadow: 0 10px 30px rgba(255,107,0,0.2);
+        }
+
+        .office-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,107,0,0.2), transparent);
+            animation: scan 4s infinite;
+        }
+
+        .office-card h3 {
+            color: #ff6b00;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #00ccff;
+            padding-bottom: 0.5rem;
+        }
+
+        .office-card:nth-child(2) h3 {
+            color: #00ccff;
+            border-bottom: 2px solid #ff6b00;
+        }
+
+        .office-detail {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .office-icon {
+            color: #ff6b00;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .office-card:nth-child(2) .office-icon {
+            color: #00ccff;
+        }
+
+        /* Section Titles - NEW COLORS */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            color: #ff6b00;
+            position: relative;
+            padding-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255,107,0,0.3);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b00, #00ccff);
+            animation: widthPulse 3s infinite;
+        }
+
+        @keyframes widthPulse {
+            0% { width: 80px; }
+            50% { width: 200px; }
+            100% { width: 80px; }
+        }
+
+        .section-title-center {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 3rem 0 2rem;
+            background: linear-gradient(45deg, #ff6b00, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Company Background - NEW COLORS */
+        .background-section {
+            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            color: #fff;
+            border: 2px solid #ff6b00;
+            box-shadow: 0 10px 30px rgba(255,107,0,0.2);
+        }
+
+        .background-text {
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: #ff6b00;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255,107,0,0.5);
+        }
+
+        /* Vision Mission - NEW COLORS */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .vm-card {
+            background: linear-gradient(145deg, #ff6b00, #ff8533);
+            color: #000;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #00ccff;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(255,107,0,0.3);
+        }
+
+        .vm-card:nth-child(2) {
+            background: linear-gradient(145deg, #00ccff, #33d6ff);
+            border: 3px solid #ff6b00;
+        }
+
+        .vm-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,204,255,0.4);
+        }
+
+        .vm-card h3 {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+        }
+
+        .vm-card p {
+            color: #000;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Core Services - NEW COLORS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #ff6b00;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:nth-child(2n) {
+            border: 2px solid #00ccff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255,107,0,0.3);
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+            color: #ff6b00;
+        }
+
+        .service-card:nth-child(2n) .service-icon {
+            color: #00ccff;
+        }
+
+        .service-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #ff6b00;
+        }
+
+        .service-card:nth-child(2n) h4 {
+            color: #00ccff;
+        }
+
+        .service-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Key Projects - NEW COLORS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #00ccff, #33d6ff);
+            color: #000;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px solid #ff6b00;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:nth-child(2n) {
+            background: linear-gradient(145deg, #ff6b00, #ff8533);
+            border: 3px solid #00ccff;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 20px 40px rgba(0,204,255,0.4);
+        }
+
+        .project-card h4 {
+            color: #000;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #000;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Why Choose Us - NEW COLORS */
+        .why-choose {
+            background: linear-gradient(135deg, #ff6b00, #00ccff);
+            color: #000;
+            padding: 4rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 3px solid #fff;
+            box-shadow: 0 20px 40px rgba(255,107,0,0.3);
+        }
+
+        .why-choose h2 {
+            color: #000;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
+        }
+
+        .why-choose p {
+            color: #000;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: fadeInLeft 0.5s ease;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .check-item::before {
+            content: "✓";
+            color: #000;
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Registration Badges - NEW COLORS */
+        .registrations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .reg-badge {
+            background: #ff6b00;
+            color: #000;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+            border: 2px solid #00ccff;
+        }
+
+        .reg-badge:nth-child(2n) {
+            background: #00ccff;
+            border: 2px solid #ff6b00;
+        }
+
+        /* Stats Grid - NEW COLORS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-item {
+            background: linear-gradient(145deg, #ff6b00, #ff8533);
+            color: #000;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #00ccff;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:nth-child(2n) {
+            background: linear-gradient(145deg, #00ccff, #33d6ff);
+            border: 3px solid #ff6b00;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Form - NEW COLORS */
+        .contact-form input, .contact-form textarea {
+            background: #1a1a1a;
+            border: 2px solid #ff6b00;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #00ccff;
+            outline: none;
+            box-shadow: 0 0 20px rgba(0,204,255,0.3);
+        }
+
+        /* CTA Section - NEW COLORS */
+        .cta-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            margin: 3rem -2rem 0;
+            color: #fff;
+            border-top: 3px solid #ff6b00;
+            border-bottom: 3px solid #00ccff;
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b00, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .cta-btn-primary {
+            background: #ff6b00;
+            color: #000;
+            border: 2px solid #00ccff;
+        }
+
+        .cta-btn-primary:hover {
+            background: #00ccff;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #00ccff;
+        }
+
+        .cta-btn-secondary {
+            background: #00ccff;
+            color: #000;
+            border: 2px solid #ff6b00;
+        }
+
+        .cta-btn-secondary:hover {
+            background: #ff6b00;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #ff6b00;
+        }
+
+        /* Footer - NEW COLORS */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            color: #999;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid #00ccff;
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none;
+        }
+
+        /* Page Transition */
+        .page {
+            animation: pageFade 0.5s ease;
+        }
+
+        @keyframes pageFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 2rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .info-grid,
+            .office-grid,
+            .vision-mission,
+            .services-grid,
+            .projects-grid,
+            .checklist,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .breadcrumb {
+                padding: 1rem 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .moving-item {
+                min-width: 280px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background - FIXED IMAGES WITH WORKING LINKS -->
+    <div class="animated-bg">
+        <div class="bg-slideshow">
+            <div class="bg-slide" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+        </div>
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <div class="float-icon" style="top: 10%; left: 5%;">🏗️</div>
+        <div class="float-icon" style="top: 20%; right: 10%; animation-delay: 2s;">🚜</div>
+        <div class="float-icon" style="bottom: 30%; left: 15%; animation-delay: 4s;">🔨</div>
+        <div class="float-icon" style="bottom: 10%; right: 20%; animation-delay: 6s;">⛑️</div>
+        <div class="float-icon" style="top: 40%; left: 25%; animation-delay: 8s;">🛠️</div>
+        <div class="float-icon" style="top: 70%; right: 5%; animation-delay: 10s;">🏭</div>
+        <div class="float-icon" style="bottom: 50%; left: 45%; animation-delay: 12s;">🚧</div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo" onclick="showPage('home')">
+            TRIBAL ZONE TRADING 370
+            <span>Civil & Construction Engineers</span>
+        </div>
+        <div class="nav-links">
+            <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
+            <a onclick="showPage('about')" id="nav-about">About Us</a>
+            <a onclick="showPage('services')" id="nav-services">Services</a>
+            <a onclick="showPage('projects')" id="nav-projects">Projects</a>
+            <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-btn nav-btn-outline" onclick="openQuote()">Request Quote</button>
+            <button class="nav-btn nav-btn-solid" onclick="openContact()">Contact Us</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a onclick="showPage('home')">Home</a> <span>›</span> <span id="current-page">Company Profile</span>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tagline">Welcome to</div>
+                <h1>TRIBAL ZONE TRADING 370</h1>
+                <p>Multi-disciplinary Civil & Construction Contractors<br>Est. 2004 | 100% Black Owned | CIDB 4GBPE & 4CEPE</p>
+            </div>
+        </section>
+
+        <!-- Moving Construction Photos - FIXED IMAGES WITH WORKING LINKS -->
+        <div class="main-content">
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2129063/pexels-photo-2129063.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+
+            <!-- Company Information -->
+            <h2 class="section-title">Company Information</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Registration Details</h3>
+                    <div class="info-item">
+                        <span class="info-label">Trade Name:</span>
+                        <span class="info-value">Tribal Zone Trading 370 CC</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Registration Number:</span>
+                        <span class="info-value">2004/120879/23</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Income Tax Number:</span>
+                        <span class="info-value">9273833153</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">VAT Number:</span>
+                        <span class="info-value">4720266859</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>CIDB Grading</h3>
+                    <div class="info-item">
+                        <span class="info-label">Civil Engineering:</span>
+                        <span class="info-value">4CEPE</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">General Building:</span>
+                        <span class="info-value">4GBPE</span>
+                    </div>
+                    <div class="registrations">
+                        <span class="reg-badge">NHBRC Registered</span>
+                        <span class="reg-badge">SARS Compliant</span>
+                        <span class="reg-badge">CSD Registered</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Office Locations -->
+            <h2 class="section-title">Our Offices</h2>
+            <div class="office-grid">
+                <div class="office-card">
+                    <h3>Bloemfontein Office</h3>
+                    <div class="office-detail">
+                        <span class="office-icon">📍</span>
+                        <span>17357 Bergman Street, Bloemfontein 9301</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">📞</span>
+                        <span>065 619 0434</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">✉️</span>
+                        <span>mtandekieric@gmail.com</span>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <h3>Klerksdorp Office</h3>
+                    <div class="office-detail">
+                        <span class="office-icon">📍</span>
+                        <span>4 Dawkins Street, Freemanville, Klerksdorp 2571</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">📞</span>
+                        <span>072 116 4310</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">✉️</span>
+                        <span>ledimotribalzone@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Background -->
+            <div class="background-section">
+                <h2 class="section-title">Company Background</h2>
+                <p class="background-text">
+                    Tribal Zone Trading is a South African multidisciplinary civil and construction contractor, combining extensive experience with professional, theoretical, and technical expertise to deliver projects on time, within budget, and to the required quality standards.
+                </p>
+                <p class="background-text">
+                    <span class="highlight">Tribal Zone Trading was founded in 2004</span> and has since operated successfully. The company continues to grow and develop as a sustainable, black-owned enterprise.
+                </p>
+                <p class="background-text">
+                    We are a <span class="highlight">100% Black owned enterprise</span> with Construction Industry Development Board (CIDB) grading of <span class="highlight">4CE-PE and 4GB-PE</span>, and are registered with NHBRC, SARS and CSD.
+                </p>
+            </div>
+
+            <!-- Vision & Mission -->
+            <div class="vision-mission">
+                <div class="vm-card">
+                    <h3>Our Vision</h3>
+                    <p>To become a nationwide well known multi-disciplinary civil, construction consulting company and to mentor upcoming entrepreneurs.</p>
+                </div>
+                <div class="vm-card">
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to render excellent services to the clients and the community at large. To empower Tribal Zone Trading employees and offer job opportunities to the community at large.</p>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="why-choose">
+                <h2>Why Choose Tribal Zone Trading?</h2>
+                <p>Tribal Zone Trading has a proven track record of delivering quality civil infrastructure projects on time and within budget. The company demonstrates strong capability in large-diameter pipelines, sewer networks, and water reticulation systems, supported by an experienced multidisciplinary team with both technical and practical expertise.</p>
+                <p>Tribal Zone Trading is committed to community empowerment, skills development, and black economic empowerment, and is fully compliant and registered with all relevant industry and regulatory bodies.</p>
+                
+                <div class="checklist">
+                    <div class="check-item">Proven track record</div>
+                    <div class="check-item">On time & within budget</div>
+                    <div class="check-item">Large-diameter pipelines</div>
+                    <div class="check-item">Sewer networks</div>
+                    <div class="check-item">Water reticulation systems</div>
+                    <div class="check-item">Experienced team</div>
+                    <div class="check-item">Community empowerment</div>
+                    <div class="check-item">Skills development</div>
+                    <div class="check-item">B-BBEE compliant</div>
+                    <div class="check-item">Fully registered</div>
+                </div>
+            </div>
+
+            <!-- Second Moving Construction Photos -->
+            <div class="moving-construction" style="margin-top: 3rem;">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2129063/pexels-photo-2129063.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about-page" class="page hidden">
+        <div class="main-content">
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+
+            <h1 class="section-title-center">About Tribal Zone Trading 370</h1>
+            
+            <!-- Company Background Expanded -->
+            <div class="background-section">
+                <h2 class="section-title">Our Story</h2>
+                <p class="background-text">
+                    Founded in 2004, Tribal Zone Trading 370 CC has established itself as a reliable and competent player in South Africa's civil engineering and construction sector. With nearly two decades of experience, we have successfully delivered numerous infrastructure projects that have contributed to community development and economic growth.
+                </p>
+                <p class="background-text">
+                    As a <strong>100% Black-owned enterprise</strong>, we are proud of our role in transformation and empowerment within the construction industry. Our CIDB grading of 4CEPE and 4GBPE demonstrates our capability to handle projects of significant size and complexity.
+                </p>
+            </div>
+
+            <!-- Company Details -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Company Details</h3>
+                    <div class="info-item">
+                        <span class="info-label">Registered Name:</span>
+                        <span class="info-value">Tribal Zone Trading 370 CC</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Registration No:</span>
+                        <span class="info-value">2004/120879/23</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Income Tax No:</span>
+                        <span class="info-value">9273833153</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">VAT No:</span>
+                        <span class="info-value">4720266859</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">CIDB Grading:</span>
+                        <span class="info-value">4GBPE & 4CEPE</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>Registrations & Compliance</h3>
+                    <div class="info-item">
+                        <span class="info-label">NHBRC:</span>
+                        <span class="info-value">Registered</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">SARS:</span>
+                        <span class="info-value">Tax Compliant</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">CSD:</span>
+                        <span class="info-value">Registered Supplier</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">B-BBEE:</span>
+                        <span class="info-value">Level 1 Contributor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Mission -->
+            <div class="vision-mission">
+                <div class="vm-card">
+                    <h3>Vision</h3>
+                    <p>To become a nationwide well known multi-disciplinary civil, construction consulting company and to mentor upcoming entrepreneurs.</p>
+                </div>
+                <div class="vm-card">
+                    <h3>Mission</h3>
+                    <p>Our mission is to render excellent services to the clients and the community at large. To empower Tribal Zone Trading employees and offer job opportunities to the community at large.</p>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h4>Quality</h4>
+                    <p>Delivering projects to the highest quality standards</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⏱️</div>
+                    <h4>Reliability</h4>
+                    <p>On time and within budget delivery guaranteed</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h4>Integrity</h4>
+                    <p>Honest and transparent business practices</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h4>Empowerment</h4>
+                    <p>Developing communities and future entrepreneurs</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h4>Expertise</h4>
+                    <p>Technical excellence and practical experience</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🇿🇦</div>
+                    <h4>Transformation</h4>
+                    <p>100% Black-owned, committed to B-BBEE</p>
+                </div>
+            </div>
+
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services-page" class="page hidden">
+        <div class="main-content">
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2129063/pexels-photo-2129063.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+
+            <h1 class="section-title-center">Our Core Services</h1>
+            <p style="text-align: center; color: #fff; background: linear-gradient(135deg, #ff6b00, #00ccff); padding: 1rem; border-radius: 10px; max-width: 800px; margin: 0 auto 3rem;">Tribal Zone Trading specializes in comprehensive civil engineering and construction services</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h4>Stormwater Drainage Systems</h4>
+                    <p>Construction of stormwater drainage systems, including bulk and reticulation pipelines, channels, and associated civil works</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚽</div>
+                    <h4>Sewer Network Construction</h4>
+                    <p>Sewer network construction, including bulk gravity pipelines, reticulation pipelines, and manholes</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💦</div>
+                    <h4>Water Supply Systems</h4>
+                    <p>Construction of water supply systems, including bulk and reticulation pipelines, borehole drilling, and equipping</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h4>Fire Hydrants & Meters</h4>
+                    <p>Installation of fire hydrants, bulk water meters, and reticulation meters</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛣️</div>
+                    <h4>Road Rehabilitation</h4>
+                    <p>Road rehabilitation and associated civil construction works</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h4>General Building Works</h4>
+                    <p>CIDB 4GBPE graded general building and construction services</p>
+                </div>
+            </div>
+
+            <!-- Capabilities -->
+            <div class="why-choose" style="margin-top: 4rem;">
+                <h2>Our Technical Capabilities</h2>
+                <div class="checklist">
+                    <div class="check-item">Large-diameter pipelines</div>
+                    <div class="check-item">Bulk water reticulation</div>
+                    <div class="check-item">Sewer networks</div>
+                    <div class="check-item">Stormwater management</div>
+                    <div class="check-item">Borehole drilling</div>
+                    <div class="check-item">Road construction</div>
+                    <div class="check-item">Earthworks</div>
+                    <div class="check-item">Concrete structures</div>
+                </div>
+            </div>
+
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projects-page" class="page hidden">
+        <div class="main-content">
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2129063/pexels-photo-2129063.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+
+            <h1 class="section-title-center">Key Projects</h1>
+            <p style="text-align: center; color: #fff; background: linear-gradient(135deg, #00ccff, #ff6b00); padding: 1rem; border-radius: 10px; max-width: 800px; margin: 0 auto 3rem;">Tribal Zone Trading has successfully delivered numerous infrastructure projects across South Africa</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>Bloemfontein Water Reticulation</h4>
+                    <p>Installation of 15km bulk water pipelines and reticulation networks in new development areas</p>
+                </div>
+                <div class="project-card">
+                    <h4>Klerksdorp Sewer Network</h4>
+                    <p>Construction of sewer reticulation pipelines and manholes for municipal upgrade project</p>
+                </div>
+                <div class="project-card">
+                    <h4>Stormwater Drainage - Phase 2</h4>
+                    <p>Bulk stormwater channels and pipeline installation for flood prevention</p>
+                </div>
+                <div class="project-card">
+                    <h4>Road Rehabilitation Project</h4>
+                    <p>Rehabilitation of 8km urban roads including earthworks and surfacing</p>
+                </div>
+                <div class="project-card">
+                    <h4>Borehole Drilling Program</h4>
+                    <p>Drilling and equipping of 12 boreholes for rural community water supply</p>
+                </div>
+                <div class="project-card">
+                    <h4>Fire Hydrant Installation</h4>
+                    <p>Installation of fire hydrants and bulk water meters for industrial park</p>
+                </div>
+            </div>
+
+            <!-- Project Stats -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">19</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Black Owned</div>
+                </div>
+            </div>
+
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-page" class="page hidden">
+        <div class="main-content">
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2129063/pexels-photo-2129063.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2367495/pexels-photo-2367495.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/1714210/pexels-photo-1714210.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+
+            <h1 class="section-title-center">Contact Tribal Zone Trading</h1>
+            
+            <div class="office-grid">
+                <div class="office-card">
+                    <h3>Bloemfontein Office</h3>
+                    <div class="office-detail">
+                        <span class="office-icon">📍</span>
+                        <span>17357 Bergman Street, Bloemfontein 9301</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">📞</span>
+                        <span>065 619 0434</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">✉️</span>
+                        <span>mtandekieric@gmail.com</span>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <h3>Klerksdorp Office</h3>
+                    <div class="office-detail">
+                        <span class="office-icon">📍</span>
+                        <span>4 Dawkins Street, Freemanville, Klerksdorp 2571</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">📞</span>
+                        <span>072 116 4310</span>
+                    </div>
+                    <div class="office-detail">
+                        <span class="office-icon">✉️</span>
+                        <span>ledimotribalzone@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Information -->
+            <div class="info-grid" style="margin-top: 3rem;">
+                <div class="info-card">
+                    <h3>Company Details</h3>
+                    <div class="info-item">
+                        <span class="info-label">Registered Name:</span>
+                        <span class="info-value">Tribal Zone Trading 370 CC</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Registration:</span>
+                        <span class="info-value">2004/120879/23</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">VAT:</span>
+                        <span class="info-value">4720266859</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Income Tax:</span>
+                        <span class="info-value">9273833153</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>Send us a Message</h3>
+                    <div class="contact-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <textarea placeholder="Your Message" rows="4"></textarea>
+                        <button class="nav-btn nav-btn-solid" onclick="alert('Message sent! We will contact you soon.')" style="width: 100%;">Send Message</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Moving Construction Photos -->
+            <div class="moving-construction">
+                <div class="moving-grid">
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2560462/pexels-photo-2560462.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    <div class="moving-item" style="background-image: url('https://images.pexels.com/photos/2129063/pexels-photo-2129063.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">Need a Reliable Civil Engineering Partner?</h2>
+        <p style="color: #fff; margin-bottom: 2rem;">Contact Tribal Zone Trading for your next infrastructure project</p>
+        <div class="cta-buttons">
+            <button class="cta-btn cta-btn-primary" onclick="openQuote()">Request a Quote</button>
+            <button class="cta-btn cta-btn-secondary" onclick="openContact()">Contact Us Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Tribal Zone Trading 370 CC | Registration: 2004/120879/23</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">CIDB Grading: 4GBPE & 4CEPE | VAT: 4720266859 | Income Tax: 9273833153</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">100% Black Owned | NHBRC Registered | SARS Compliant | CSD Registered</p>
+    </footer>
+
+    <script>
+        // Function to show different pages
+        function showPage(page) {
+            // Hide all pages
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('about-page').classList.add('hidden');
+            document.getElementById('services-page').classList.add('hidden');
+            document.getElementById('projects-page').classList.add('hidden');
+            document.getElementById('contact-page').classList.add('hidden');
+            
+            // Show selected page
+            document.getElementById(page + '-page').classList.remove('hidden');
+            
+            // Update breadcrumb
+            const pageNames = {
+                'home': 'Company Profile',
+                'about': 'About Us',
+                'services': 'Our Services',
+                'projects': 'Key Projects',
+                'contact': 'Contact Us'
+            };
+            document.getElementById('current-page').textContent = pageNames[page];
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('nav-' + page).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Navigation functions
+        function openQuote() {
+            alert('Thank you for your interest! Please email us at: mtandekieric@gmail.com or ledimotribalzone@gmail.com');
+        }
+
+        function openContact() {
+            showPage('contact');
+        }
+
+        // Make all navigation links work
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const text = this.textContent.toLowerCase();
+                if (text.includes('home')) showPage('home');
+                else if (text.includes('about')) showPage('about');
+                else if (text.includes('service')) showPage('services');
+                else if (text.includes('project')) showPage('projects');
+                else if (text.includes('contact')) showPage('contact');
+            });
+        });
+
+        // Make breadcrumb home link work
+        document.querySelector('.breadcrumb a').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('home');
+        });
+
+        // Logo click
+        document.querySelector('.logo').addEventListener('click', function() {
+            showPage('home');
+        });
+
+        // Initialize - show home page
+        showPage('home');
+    </script>
+</body>
+</html>
